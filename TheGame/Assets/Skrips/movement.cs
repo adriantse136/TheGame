@@ -22,7 +22,7 @@ public class movement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rigid.velocity.y) < 0.001f)
         {
-            this.GetComponent<AudioSource>().Play();
+            //this.GetComponent<AudioSource>().Play();
             rigid.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
         }
 
