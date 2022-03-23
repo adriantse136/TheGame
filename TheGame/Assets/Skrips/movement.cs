@@ -7,23 +7,24 @@ public class movement : MonoBehaviour
     public float MovementSpeed = 1;
     Animator animate;
     private Rigidbody2D rigid;
+    public float jumpforce;
     // Start is called before the first frame update  
     void Start()
     {
-
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame  
     void Update()
     {
         var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement * 100, 0, 0) * Time.deltaTime * MovementSpeed;
+        transform.Translate(new Vector3(movement * MovementSpeed, 0, 0) * Time.deltaTime);
         //print("update");
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rigid.velocity.y) < 0.001f)
         {
             //this.GetComponent<AudioSource>().Play();
-            rigid.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
+            rigid.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
