@@ -18,10 +18,8 @@ public class MatchWidth : MonoBehaviour
     // even if the screen/window size changes dynamically.
     void Update()
     {
-        float unitsPerPixel = sceneWidth / Screen.width;
-
-        float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
-
-        _camera.orthographicSize = desiredHalfHeight;
+        print("Camera Y: " + GameObject.Find("Main Camera").transform.position[1]);
+        print("Player Y: " + GameObject.Find("Player").transform.position[1]);
+        transform.position = new Vector3(0, GameObject.Find("Player").transform.position[1], 0);
     }
 }
