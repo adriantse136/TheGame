@@ -18,8 +18,8 @@ public class MatchWidth : MonoBehaviour
     // even if the screen/window size changes dynamically.
     void Update()
     {
-        print("Camera Y: " + GameObject.Find("Main Camera").transform.position[1]);
-        print("Player Y: " + GameObject.Find("Player").transform.position[1]);
+        //print("Camera Y: " + GameObject.Find("Main Camera").transform.position[1]);
+        //print("Player Y: " + GameObject.Find("Player").transform.position[1]);
         transform.position = new Vector3(0, GameObject.Find("Player").transform.position[1], 0);
     }
 }
