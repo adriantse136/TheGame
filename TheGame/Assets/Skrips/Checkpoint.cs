@@ -5,6 +5,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public string Next = "";
+    public LevelManager levelManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class Checkpoint : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        LevelManager.NextLevel;
+        levelManager.NextLevel(Next); 
 
     }
 }
