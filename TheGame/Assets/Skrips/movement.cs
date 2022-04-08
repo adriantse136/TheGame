@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
     Animator animate;
     private Rigidbody2D rigid;
     public float jumpforce;
+    public GameObject bulletPrefab;
     // Start is called before the first frame update  
     void Start()
     {
@@ -31,6 +32,10 @@ public class movement : MonoBehaviour
         {
             //animate.SetInteger("state", 1);
             //print("right");
+        }
+        if(Input.GetKey(KeyCode.J))
+        {
+            Instantiate(bulletPrefab, new Vector3(0, 0, 1), Quaternion.identity);
         }
         else
         {

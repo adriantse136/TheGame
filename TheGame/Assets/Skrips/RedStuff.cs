@@ -11,9 +11,9 @@ public class RedStuff : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        System.Threading.Thread.Sleep(3000);
+        System.Threading.Thread.Sleep(1000);
         print("You died");
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("GameOver");
 
     }
 }

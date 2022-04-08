@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour
 {
     public string Next = "";
-    public LevelManager levelManager;
+    public LevelManager lm;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,8 @@ public class Checkpoint : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        levelManager.NextLevel(Next); 
+        lm.LoadIt(Next);
+        print("Collided checkpoint");
 
     }
 }
